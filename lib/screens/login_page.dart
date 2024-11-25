@@ -20,12 +20,17 @@ bool glaza=true;
 
     if (login == "admin@gmail.com" && password == "12345") {
       
+      
       Navigator.of(context).pushNamed(
         '/main_screen',
       );
-    }else {
-    errorText="не верный логин или пароль";
-   }
+    }else ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.white,
+            content: const Text('Не верное логин или пароль',style:TextStyle(color:Colors.red)),
+          
+          ),
+        );
     
 
     setState(() {});
@@ -68,7 +73,9 @@ setState(() {
                   labelStyle: TextStyle(fontSize: 16),
                   labelText: 'gmail.com',
                   hintStyle: TextStyle(fontWeight: FontWeight.w300),
+                  
                 ),
+                controller: loginController,
               ),
               const SizedBox(height: 20),
               TextFormField(
@@ -98,6 +105,10 @@ setState(() {
                       color: Colors.black),
                 ),
               ),
+              
+                
+              
+              
               const SizedBox(height: 30),
               TextButton(
                 onPressed: () {
