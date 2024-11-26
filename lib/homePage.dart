@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:zametka_01/screens/drawer_page.dart';
+import 'package:zametka_01/screens/search_page.dart';
 import 'package:zametka_01/screens/zametka_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,10 +15,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Заметки"),
+       
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+          IconButton(onPressed: () {Navigator.push(context,MaterialPageRoute(builder:(context) => SearchPage(),));}, icon: const Icon(Icons.search)),
         ],
+        title: const Text("Заметки"),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
@@ -24,14 +27,20 @@ class _HomePageState extends State<HomePage> {
           Navigator.pushNamed(context, "/create");
         },
       ),
-      
+      drawer:const DrawerPage(),
       body: ListView.builder(
         itemCount: 100,
         itemBuilder: (BuildContext context, int index) {
           
           return Card(
             child: TextButton(
-              child: Text("Тема"),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                 const Text("Тема"),
+                  IconButton(onPressed: (){}, icon: const Icon(Icons.delete,size:20))
+                ],
+              ),
               onPressed: () {
                 Navigator.push(
                     context,

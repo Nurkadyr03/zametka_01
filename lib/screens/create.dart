@@ -20,12 +20,7 @@ class _CreatePageState extends State<CreatePage> {
             children: [
               const SizedBox(height: 30),
               TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "написать";
-                  }
-                  return null;
-                },
+                
                 decoration: const InputDecoration(
                     hintText: 'Тема',
                     border: OutlineInputBorder(
@@ -33,12 +28,7 @@ class _CreatePageState extends State<CreatePage> {
               ),
               const SizedBox(height: 30),
               TextFormField(
-                 validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "написать";
-                  }
-                  return null;
-                },
+                
                 maxLines: 20,
                 decoration: const InputDecoration(
                     hintText: 'описание ',

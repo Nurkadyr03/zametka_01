@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:zametka_01/homePage.dart';
+import 'package:zametka_01/screens/chang_page.dart';
 import 'package:zametka_01/screens/create.dart';
 import 'package:zametka_01/screens/login_page.dart';
 import 'package:zametka_01/screens/sign_in_page.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         "/main_screen": (context) => const HomePage(),
         "/sign_page": (context) => const SignInPage(),
         "/create":(context)=>const CreatePage(),
+        
       },
       initialRoute: "/",
     );
